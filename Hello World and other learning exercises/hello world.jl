@@ -5,3 +5,6 @@
 
 println("sah dude")
 println("its ya boi")
+println("whats your name?")
+
+name
