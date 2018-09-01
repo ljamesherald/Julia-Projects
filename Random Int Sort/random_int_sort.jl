@@ -16,7 +16,7 @@
 =#
 random_array = [1,2,3]
 
-n = 100000 #n represents my increment variable and can be used to controll the size of random_array
+n = 1000 #n represents my increment variable and can be used to controll the size of random_array
 
 while length(random_array) != n
     x = rand() * 1000000
