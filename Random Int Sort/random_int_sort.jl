@@ -10,19 +10,22 @@
     diameter in inches
 =#
 #=
-    tis is the decloration of my array.
+    this is the decloration of my array.
     Because julia is a dynamicly typed language,
     i dont need to declare my variable type.
 =#
-random_array = [1,2,3]
 
-n = 1000 #n represents my increment variable and can be used to controll the size of random_array
+#this reporesents the run time before building and populating the array
+run_time_before_array = time_ns()
 
-while length(random_array) != n
-    x = rand() * 1000000
-    x = trunc(Int64, x)
-    x = mod(x,101)
-    push!(random_array, x)
-end
+# the rand function populates an array with random integers with a range of (0,100) and a size of 100 elements
+random_array = rand(0:100, 100)
+
+#this reporesents the run time after building and populating the array
+run_time_after_array = time_ns()
+
+
 println(length(random_array))
 println(random_array)
+# this fuction prints the total time it took to declare, and populate the array
+println(e - b)
