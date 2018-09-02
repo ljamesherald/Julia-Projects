@@ -15,11 +15,14 @@
     i dont need to declare my variable type.
 =#
 
+#n reporesents the number of elements in my arra
+n = 100
+
 #this reporesents the run time before building and populating the array
 run_time_before_array = time_ns()
 
-# the rand function populates an array with random integers with a range of (0,100) and a size of 100 elements
-random_array = rand(0:100, 100)
+# the rand function populates an array with random integers with a range of (0,100) and a size of n elements
+random_array = rand(0:100, n)
 
 #this reporesents the run time after building and populating the array
 run_time_after_array = time_ns()
@@ -28,4 +31,13 @@ run_time_after_array = time_ns()
 println(length(random_array))
 println(random_array)
 # this fuction prints the total time it took to declare, and populate the array
-println(e - b)
+println(run_time_after_array - run_time_before_array)
+
+    for _ in 2:length(random_array), j in 1:length(random_array)-1
+        if random_array[j] > random_array[j+1]
+            random_array[j], random_array[j+1] = random_array[j+1], random_array[j]
+        end
+    end
+
+
+println((random_array))
