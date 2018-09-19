@@ -6,7 +6,7 @@ function fib(n)
   end
  end
 
-#=
+
 for i =  1:20
  colective_time = 0
  for j = 0:100
@@ -17,9 +17,6 @@ for i =  1:20
  end
  println(colective_time / 100)
 end
-=#
-
-
 
 function IterativeFib(n)
  x = 0
