@@ -6,11 +6,38 @@ function fib(n)
   end
  end
 
+#=
+for i =  1:20
+ colective_time = 0
+ for j = 0:100
+  b_run_time = time_ns()
+  fib(i)
+  e_run_time = time_ns()
+  colective_time = colective_time + (e_run_time - b_run_time)
+ end
+ println(colective_time / 100)
+end
+=#
 
-for i =  0:20
-b_run_time = time_ns()
-fib(i), "\n"
-e_run_time = time_ns()
-print(i, "\n")
-print((e_run_time - b_run_time)/1000000, "\n")
+
+
+function IterativeFib(n)
+ x = 0
+ y = 1
+ for i = 1:n
+   z = x + y
+   y=x
+   x=z
+ end
+end
+
+for i =  1:20
+ colective_time = 0
+ for j = 1:100
+  b_run_time = time_ns()
+  IterativeFib(i)
+  e_run_time = time_ns()
+  colective_time = colective_time + (e_run_time - b_run_time)
+ end
+ println(colective_time / 100)
 end
